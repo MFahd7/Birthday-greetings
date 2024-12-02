@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        <div id="header">
+            <h1>Today is <em>your</em> birthday 🎉</h1>
+            <img id="bff-img" src="/assets/434160143_1478524526408907_45344836961108189_n.jpg">
+            <h2 id="bday-age">24 years old</h2>
+            <div id="dateContainer" class="bday-date"> </div>
+        </div>
+        
+        <div class="gift-section">
+            <h2 class="gift-title">Here's how happy I am for you today 🥳</h2>
+            <h3 class="gift-hint">(Click or hover over the gift)</h3>
+            <div class="gift-img" id="gift-img-happy" onclick="showGif('gift-img-happy', '/assets/happy.gif')"></div>
+        </div>
+        
+        <div class="gift-section">
+            <h2 class="gift-title">How people react when you enter the room 😍</h2>
+            <div class="gift-img" id="gift-img-hot" onclick="showGif('gift-img-hot', '/assets/hoty.webp')"></div>
+        </div>
+        
+        <div class="gift-section">
+            <h2 class="gift-title">If I had to describe you with ONE word 👇</h2>
+            <div class="gift-img" id="gift-img-genius" onclick="showGif('gift-img-genius', '/assets/genius.gif')"></div>
+        </div>
+        
+        <div class="gift-section">
+            <h2 class="gift-title">The only person as badass as you 💪</h2>
+            <div class="gift-img" id="gift-img-badass" onclick="showGif('gift-img-badass', '/assets/giphy.webp')"></div>
+        </div>
+        
+         <div class="gift-section">
+            <h2 class="gift-title">This one's for you, my friend 🥂</h2>
+            <div class="gift-img" id="gift-img-cheers" onclick="showGif('gift-img-cheers', '/assets/cheers.gif')"></div>
+        </div>
+        
+        <p id="footer">Want to create your own Birthday GIFt site? Take <a href="https://scrimba.com/learn/htmlandcss" target="_blank">this HTML & CSS course.</a></p>
+        
+    </body>
+    
+    <script>
+            //this changes the date to the current date (dynamic)
+            const dateContainer = document.getElementById('dateContainer');
+            const currentDate = new Date();
+            const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+            const formattedDate = currentDate.toLocaleDateString(undefined, options);
+            dateContainer.textContent = formattedDate;
+            
+            //this take all the data gif attribute from div and show its gif individually 
+            
+            function showGif(id, gifUrl) {
+                const giftImage = document.getElementById(id);
+                giftImage.style.backgroundImage = `url('${gifUrl}')`;
+                giftImage.style.backgroundSize = "cover";
+            }
+    </script>
+</html>
